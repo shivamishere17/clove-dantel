@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clove Dental</title>
+    <link rel="stylesheet" href="collagefinelproject.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span class="clove-logo">clove:)</span>
+        <span class="dental">DENTAL</span>
+      </div>
+    </header>
+    <div class="hero">
+      <div class="hero-content">
+        <h2>Your Smile, Our Priority, At Clove Dental</h2>
+        <p>Explore wide range of general dentistry solutions</p>
+        <a href="appbook.html">
+          <button type="submit">Book Appointment</button>
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="images/clove doc.jpg" alt="Doctor Image" />
+      </div>
+    </div>
+    <div class="gold-standard">
+      <h2>Gold Standard Treatments</h2>
+      <p1>Only Asian Member of the Royal Society of Medicine, UK</p1>
+      <div class="rating">
+        <img src="images/googleicon.png" alt="Google Logo" />
+        <span class="rating-score">4.9/5</span>
+        <span class="rating-clinics">450+ Clinics</span>
+      </div>
+
+      <!-- HTML Part -->
+      <div class="button">
+        <select name="city" id="city">
+          <option>Select City</option>
+          <option value="Dehradun, India">Dehradun</option>
+          <option value="Delhi, India">Delhi</option>
+          <option value="Jaipur, India">Jaipur</option>
+          <option value="Mumbai, India">Mumbai</option>
+          <option value="Bangalore, India">Bangalore</option>
+          <option value="Rishikesh, India">Rishikesh</option>
+        </select>
+        <button onclick="openMap()">Locate nearest Clove clinic</button>
+      </div>
+
+      <!-- JavaScript Part -->
+      <script>
+        function openMap() {
+          // Get the selected city
+          var city = document.getElementById("city").value;
+
+          // Check if a city has been selected
+          if (city !== "Select City") {
+            // Create the Google Maps URL
+            var url =
+              "https://www.google.com/maps/search/?api=1&query=Clove+Dental+" +
+              encodeURIComponent(city);
+
+            // Open the URL in a new tab or the maps application
+            window.open(url, "_blank");
+          } else {
+            // Alert the user to select a city
+            alert("Please select a city.");
+          }
+        }
+      </script>
+    </div>
+
+    <h1>
+      All dental issues from simple cleaning to full mouth rehabilitation under
+      one roof
+    </h1>
+    <div class="services-container">
+      <div class="service">
+        <img src="images/root canal.jpeg" alt="Root Canal Treatment" />
+        <p>Root Canal Treatment</p>
+      </div>
+      <div class="service">
+        <img src="images/braces.jpeg" alt="Braces" />
+        <p>Braces</p>
+      </div>
+      <div class="service">
+        <img src="images/teeth brightning.png" alt="Teeth Whitening" />
+        <p>Teeth Whitening</p>
+      </div>
+      <div class="service">
+        <img src="images/invisible.img" alt="Invisible Braces" />
+        <p>Invisible Braces</p>
+      </div>
+      <div class="service">
+        <img src="images/implants.jpeg" alt="Dental Implants" />
+        <p>Dental Implants</p>
+      </div>
+      <div class="service">
+        <img src="images/makeover.jpeg" alt="Smile Makeover" />
+        <p>Smile Makeover</p>
+      </div>
+      <div class="service">
+        <img src="images/kids.png" alt="Kids Dentistry" />
+        <p>Kids Dentistry</p>
+      </div>
+      <div class="service">
+        <img src="images/gum.webp" alt="Gum Treatment" />
+        <p>Gum Treatment</p>
+      </div>
+      <div class="service">
+        <img src="images/wisdom.png" alt="Wisdom tooth" />
+        <p>Wisdom tooth</p>
+      </div>
+      <div class="service">
+        <img src="images/laser.png" alt="Laser/Painless Dentistry" />
+        <p>Laser/Painless Dentistry</p>
+      </div>
+      <div class="service">
+        <img src="images/crowns.png" alt="Crowns & Bridges" />
+        <p>Crowns & Bridges</p>
+      </div>
+      <div class="service">
+        <img src="images/dentures.png" alt="Dentures" />
+        <p>Dentures</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="form-section">
+        <h2>Expert Guidance for Healthy Smiles</h2>
+        <p>Contact Now</p>
+        <form>
+          <input
+            type="text"
+            placeholder="Name"
+            value="shivam jayara"
+            readonly
+          />
+          <input
+            type="tel"
+            placeholder="Mobile Number"
+            value="7248421636"
+            readonly
+          />
+        </form>
+      </div>
+      <div class="info-section">
+        <h3>10x Safety Protocols</h3>
+        <p>Monitored by DORI (Artificial Intelligence System)</p>
+        <!-- <a href="#">Learn More &raquo;</a> -->
+        <div class="feature">
+          <img src="images/clinic icon.jpg" alt="Clinic Icon" />
+          <div class="feature-text">
+            <p>450+ Neighbourhood Clinics Pan India</p>
+          </div>
+        </div>
+        <div class="feature">
+          <img src="images/docicon.jpg" alt="Doctor Icon" />
+          <div class="feature-text">
+            <p>1200+ Expert Doctors Covering All Specialties</p>
+          </div>
+        </div>
+        <img src="images/doctor.jpg" alt="Doctor Image" class="doctor-image" />
+      </div>
+    </div>
+
+    <div class="dental-container">
+      <h1 class="dental-heading">
+        Unmatched Dental Excellence by 1200+ Specialists
+      </h1>
+      <div class="dental-features">
+        <div class="dental-feature">
+          <i class="fas fa-users dental-icon"></i>
+          <p>Team of Specialists</p>
+          <p>75+ Orthodontists</p>
+        </div>
+        <div class="dental-feature">
+          <i class="fas fa-venus-mars dental-icon"></i>
+          <p>Leading with</p>
+          <p>80% women</p>
+        </div>
+        <div class="dental-feature">
+          <i class="fas fa-user-md dental-icon"></i>
+          <p>60% MDs</p>
+          <p>Doctors for specialised care</p>
+        </div>
+      </div>
+      <div class="dental-doctors">
+        <div class="dental-doctor">
+          <img src="images/doc1.jpeg" alt="Dr. Suresh Kumar" />
+          <h3>Dr. Suresh Kumar</h3>
+          <p>18+ Years Experience</p>
+        </div>
+        <div class="dental-doctor">
+          <img src="images/rajni.jpeg" alt="Dr. Rajni Mary" />
+          <h3>Dr. Rajni Mary</h3>
+          <p>10+ Years Experience</p>
+        </div>
+        <div class="dental-doctor">
+          <img src="images/shusma.jpeg" alt="Dr. Shushma Reddy" />
+          <h3>Dr. Shushma Reddy</h3>
+          <p>20+ Years Experience</p>
+        </div>
+      </div>
+      <button class="dental-button">Meet our Doctors</button>
+      <div class="dental-stats">
+        <div class="dental-stat">
+          <i class="fas fa-smile dental-icon"></i>
+          <p>31+ Happy Patients</p>
+        </div>
+        <div class="dental-stat">
+          <i class="fas fa-user-md dental-icon"></i>
+          <p>1200+ Dentists</p>
+        </div>
+        <div class="dental-stat">
+          <i class="fas fa-clinic-medical dental-icon"></i>
+          <p>450+ Clinics</p>
+        </div>
+        <div class="dental-stat">
+          <i class="fas fa-clock dental-icon"></i>
+          <p>7 Days Open</p>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="question">
+          <p>Am I charged the dentist during work for Clover?</p>
+          <p>Can I contract the dentist to pay cash by Cloven?</p>
+        </div>
+        <div class="question">
+          <p>Will I get to know who my dentist is right away?</p>
+          <p>
+            Can I pick up language barrier and specific skill can dentists at
+            Clover?
+          </p>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-links-container">
+          <div class="link-group">
+            <h3>Treatments</h3>
+            <ul>
+              <li>Dental Implants</li>
+              <li>Tooth Extractions</li>
+              <li>Root Canals</li>
+              <li>Braces &amp; Aligners</li>
+              <li>Crowns &amp; Bridges</li>
+              <li>Dentures</li>
+              <li>Dental Cleanings</li>
+              <li>Dental Veneers</li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Why Clover?</li>
+              <li>Our Locations</li>
+              <li>Pricing</li>
+              <li>FAQs</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Explore Clover</h3>
+            <ul>
+              <li>For Patients</li>
+              <li>For Dentists</li>
+              <li>Careers</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Login</h3>
+            <ul>
+              <li>Patient Login</li>
+              <li>Dentist Login</li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#"><img src="images/face.webp" alt="facebook" /></a>
+          <a href="#"><img src="images/twitter.webp" alt="Twitter" /></a>
+          <a href="#"><img src="images/inssta.webp" alt="Instagram" /></a>
+        </div>
+        <p class="copyright">&copy; Clover Dental</p>
+      </footer>
+    </main>
+  </body>
+</html>

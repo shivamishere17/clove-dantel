@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type=text], input[type=email], input[type=tel], input[type=date], input[type=time] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <div class="container">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm" action="db1.php" method="POST" onsubmit="return validateTime()">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="concern">Concern:</label>
+                <select id="concern" name="concern" required>
+                    <option value="">Select Concern</option>
+                    <option value="Root Canal Treatment">Root Canal Treatment</option>
+                    <option value="Braces">Braces</option>
+                    <option value="Teeth Whitening">Teeth Whitening</option>
+                    <option value="Invisible Braces">Invisible Braces</option>
+                    <option value="Dental Implants">Dental Implants</option>
+                    <option value="Smile Makeover">Smile Makeover</option>
+                    <option value="Kids Dentistry">Kids Dentistry</option>
+                    <option value="Gum Treatment">Gum Treatment</option>
+                    <option value="Wisdom tooth">Wisdom tooth</option>
+                    <option value="Laser/Painless Dentistry">Laser/Painless Dentistry</option>
+                    <option value="Crowns & Bridges">Crowns & Bridges</option>
+                    <option value="Dentures">Dentures</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentDate">Preferred Date:</label>
+                <input type="date" id="appointmentDate" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentTime">Preferred Time:</label>
+                <input type="time" id="appointmentTime" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Book Appointment</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateTime() {
+            const timeInput = document.getElementById('appointmentTime').value;
+            const time = new Date(`1970-01-01T${timeInput}:00`);
+            const startTime = new Date('1970-01-01T10:00:00');
+            const endTime = new Date('1970-01-01T18:00:00');
+
+            if (time < startTime || time > endTime) {
+                alert('Appointment time must be between 10:00 AM and 6:00 PM.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

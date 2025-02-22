@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clove Dental - Find a Clinic</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        .controls select, .controls button {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Locate a Clove Dental Clinic</h1>
+
+    <div class="controls">
+        <select id="clinic-selector" onchange="updateMap()">
+            <option value="">Select City</option>
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="bangalore">Bangalore</option>
+        </select>
+        <button onclick="locateNearestClinic()">Locate Nearest Clinic</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script>
+        var map;
+        var marker;
+        var locations = {
+            delhi: {"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.931654583705!2d78.03937012502138!3d30.32446180525029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929ea85275763%3A0xdc5852f79736305f!2sClock%20Tower!5e0!3m2!1sen!2sin!4v1723189080458!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" },
+            mumbai: { lat: 19.0760, lng: 72.8777 },
+            bangalore: { lat: 12.9716, lng: 77.5946 }
+        };
+
+        function initMap() {
+            // Default location (Delhi)
+            var defaultLocation = locations.delhi;
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: defaultLocation
+            });
+
+            marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map
+            });
+        }
+
+        function updateMap() {
+            var selectedCity = document.getElementById('clinic-selector').value;
+            if (selectedCity) {
+                var newLocation = locations[selectedCity];
+                map.setCenter(newLocation);
+                marker.setPosition(newLocation);
+            }
+        }
+
+        function locateNearestClinic() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            var userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            map.setCenter(userLocation);
+            marker.setPosition(userLocation);
+            // In a real implementation, you would compare `userLocation` with clinic locations
+            // to find the nearest clinic and update the map accordingly.
+        }
+    </script>
+
+</body>
+</html>
